@@ -36,5 +36,9 @@ def calculate():
     else:
         return render_template("main.html")
 
+@app.errorhandler(404)
+def not_found(error):
+    return render_template("error_404.html", error=error)
+
 if __name__ == '__main__':
     app.run(debug=True)
