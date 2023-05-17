@@ -40,5 +40,9 @@ def calculate():
 def not_found(error):
     return render_template("error_404.html", error=error)
 
+@app.errorhandler(500)
+def srv_error(error):
+    return render_template("error_500.html", error=error)
+
 if __name__ == '__main__':
     app.run(debug=True)
